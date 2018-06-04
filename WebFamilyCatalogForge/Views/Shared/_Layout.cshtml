@@ -1,4 +1,5 @@
-﻿@inject Microsoft.ApplicationInsights.AspNetCore.JavaScriptSnippet JavaScriptSnippet
+﻿@using Microsoft.AspNetCore.Mvc.Rendering
+@inject Microsoft.ApplicationInsights.AspNetCore.JavaScriptSnippet JavaScriptSnippet
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,6 +17,7 @@
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
+   
     @Html.Raw(JavaScriptSnippet.FullScript)
 </head>
 <body>
@@ -28,19 +30,24 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">WebFamilyCatalogForge</a>
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Family Catalog</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    <li><div style="margin-top: 7px; margin-left: 50px">@Html.Partial("Upload")</div></li>
+                    @*<li><div>
+                        <input id="searchInput" class="form-control" type="search" placeholder="Search" style="width: 80%; float: left; margin: 5px" onkeyup="search()"/>
+                        @*<button class="btn btn-success" style="margin: 5px" onclick="search()">Search</button>
+                    </div></li>*@
+                    @*<li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>*@
                 </ul>
                 @await Html.PartialAsync("_LoginPartial")
             </div>
         </div>
     </nav>
-    <div class="container body-content">
+    <div class="container body-content" style="width: 100%">
         @RenderBody()
         <hr />
         <footer>

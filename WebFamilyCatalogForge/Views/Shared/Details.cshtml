@@ -1,0 +1,72 @@
+﻿@{
+    ViewData["Title"] = "Details";
+}
+<head>
+    <link rel="stylesheet" href="https://developer.api.autodesk.com/modelderivative/v2/viewers/style.min.css" type="text/css" />
+    <script src="https://developer.api.autodesk.com/viewingservice/v1/viewers/three.min.js"></script>
+    <script src="https://developer.api.autodesk.com/viewingservice/v1/viewers/viewer3D.min.js"></script>
+    <script src="~/js/forge.js"></script>
+</head>
+
+<body>
+
+<div class="row">
+    <div class="col-md-3">
+        <div id="ForgeDiv"></div>
+    </div>
+    <div class="col-md-3">
+        <div id="details" class="col-md-3">
+
+            <div id="tableDetails" style="margin-top: 45px; margin-right: 10px; width: 600px">
+                <table id="TypeDetails">
+                    @*<tr>
+                        <td>
+                            <div id="ForgeDiv"></div>
+                        </td>
+                    </tr>*@
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+<script type="text/javascript">
+    var urn = "@Model";
+    showModel(urn);
+</script>
+
+<style>
+    #TypeData, #TypeDetails {
+        table-layout: fixed;
+        width: 100%;
+        border: 1px solid #ddd;
+        border-collapse: collapse;
+    }
+
+        #TypeData tr:nth-child(even), #TypeDetails tr:nth-child(even) {
+            background-color: #f2f2f2
+        }
+
+        #TypeData tr:hover, #TypeDetails tr:hover {
+            background-color: #ddd
+        }
+
+        #TypeData th, #TypeDetails th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center
+        }
+
+        #TypeData td, #TypeData th, #TypeDetails td, #TypeDetails th {
+            border: 1px solid #ddd;
+            padding: 8px;
+            word-wrap: break-word
+        }
+</style>
+
+
+
