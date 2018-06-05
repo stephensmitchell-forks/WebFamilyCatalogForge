@@ -11,8 +11,8 @@
 
   <ItemGroup>
     <Content Include="wwwroot\images\loadingAnimation.gif" />
+    <Content Include="wwwroot\js\dataSave.js" />
     <Content Include="wwwroot\js\forge.js" />
-    <Content Include="wwwroot\js\TypeDetails.js" />
     <Content Include="wwwroot\typeFiles\ .rvt" />
     <Content Include="wwwroot\typeFiles\BDK_ALG.rvt" />
     <Content Include="wwwroot\typeFiles\BDK_STA.rvt" />

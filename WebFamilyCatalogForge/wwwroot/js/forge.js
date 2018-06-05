@@ -11,7 +11,7 @@ function showModel(urn) {
     };
 
     var documentId = 'urn:' + urn;
-
+    console.log(documentId);
     if (window.Autodesk === undefined) {
         console.log("Viewing " + window.Autodesk);
 
@@ -31,7 +31,6 @@ function onDocumentLoadSuccess(doc) {
         console.error('Document contains no viewables.');
         return;
     }
-    document = doc;
     viewerApp.selectItem(viewables[0].data, onItemLoadSuccess, onItemLoadFail);
 }
 

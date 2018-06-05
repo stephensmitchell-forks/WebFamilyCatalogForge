@@ -28,6 +28,7 @@ namespace WebFamilyCatalogForge.Controllers
         public async Task<IActionResult> IndexName(string DATA)
         {
             string fileName = @"D:\Forge\WebFamilyCatalogForge\WebFamilyCatalogForge\wwwroot\typeFiles\" + DATA + ".rvt";
+            Console.WriteLine("***************" + fileName);
             //Create Bucket Name
             string bucketKey = "forgeapp" + Guid.NewGuid().ToString("N").ToLower();
 
