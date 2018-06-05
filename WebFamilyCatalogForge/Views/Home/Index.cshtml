@@ -2,136 +2,95 @@
 @{
     ViewData["Title"] = "Home Page";
 }
-<head>
-    <link rel="stylesheet" href="https://developer.api.autodesk.com/modelderivative/v2/viewers/style.min.css" type="text/css" />
-    <script src="https://developer.api.autodesk.com/viewingservice/v1/viewers/three.min.js"></script>
-    <script src="https://developer.api.autodesk.com/viewingservice/v1/viewers/viewer3D.min.js"></script>
-    @*<script src="~/js/forge.js"></script>*@
-</head>
+<script src="~/js/dataSave.js"></script>
 
 <body>
-<div hidden>
-<form method="post" asp-controller="Home" asp-action="IndexName">
-    @*<label for="typeName">Type Name</label>*@
-    <input id="typeFileName"type="text" placeholder="Selected Type Name" name="DATA">
-    <input id="typeNameSubmit" type="submit" value="Submit"/>
-</form>
-</div>
-
-@*<div id="testDiv">
-    Include a header DIV with the same name as the draggable DIV, followed by "header":
-    <div id="testDivheader">Details Panel</div>
-    @*<div id="tableDetails" style="margin-top: 45px; margin-left: 560px; margin-right: 10px; ">
-        <table id="TypeDetails"></table>
-    </div>
-</div>*@
-
-
-@*<script type="text/javascript">
-    var urn = "@Model";
-    showModel(urn);
-</script>*@
-
-<div class="row">
-    <div class="col-md-3" style="width: 300px">
-        <button class="accordion" style="margin-top: 45px">Element</button>
-        <div class="panel">
-            <button class="btn btn-link" onclick="selectCategory(this.innerText)">Elektrische Ausstattung</button><br/>
-            <button class="btn btn-link" onclick="selectCategory(this.innerText)">Elektroinstallationen</button><br/>
-            <button class="btn btn-link" onclick="selectCategory(this.innerText)">Kommunikationsgeräte</button><br/>
-            <button class="btn btn-link" onclick="selectCategory(this.innerText)">Datengeräte</button><br/>
-            <button class="btn btn-link" onclick="selectCategory(this.innerText)">Brandmeldegeräte</button><br/>
-            <button class="btn btn-link" onclick="selectCategory(this.innerText)">Lichtschalter</button><br/>
-            <button class="btn btn-link" onclick="selectCategory(this.innerText)">Leuchten</button><br/>
-            <button class="btn btn-link" onclick="selectCategory(this.innerText)">Notrufgeräte</button><br/>
-            <button class="btn btn-link" onclick="selectCategory(this.innerText)">Sicherheitsgeräte</button><br/>
-            <button class="btn btn-link" onclick="selectCategory(this.innerText)">Telefongeräte</button><br/>
-            <button class="btn btn-link" onclick="selectCategory(this.innerText)">Allgemeines Modell</button><br/>
-        </div>
-
-        <button class="accordion">Installationsmedium</button>
-        <div id="installMediumCategories" class="panel">
-            <p>Nach Kategorie...</p>
-        </div>
-
-        <button class="accordion">Installationsort</button>
-        <div class="panel">
-            <p>
-                <div style="float: left; width: 40px">
-                    <label class="switch">
-                        <input id="placementCeiling" type="checkbox" onclick="sortData()">
-                        <span class="slider round"></span>
-                    </label>
-                </div>
-                <div>Decke</div>
-            </p>
-
-            <p>
-                <div style="float: left; width: 40px">
-                    <label class="switch">
-                        <input id="placementWall" type="checkbox" onclick="sortData()">
-                        <span class="slider round"></span>
-                    </label>
-                </div>
-                <div>Wand</div>
-            </p>
-            <p>
-                <div style="float: left; width: 40px">
-                    <label class="switch">
-                        <input id="placementFloor" type="checkbox" onclick="sortData()">
-                        <span class="slider round"></span>
-                    </label>
-                </div>
-                <div>Boden</div>
-            </p>
-        </div>
-
-        <button class="accordion">Installationsart</button>
-        <div class="panel">
-            <p>
-                <div style="float: left; width: 40px">
-                    <label class="switch">
-                        <input id="internalMount" type="checkbox" onclick="sortData()">
-                        <span class="slider round"></span>
-                    </label>
-                </div>
-                <div>Unterputzmontage</div>
-            </p>
-            <p>
-                <div style="float: left; width: 40px">
-                    <label class="switch">
-                        <input id="externalMount" type="checkbox" onclick="sortData()">
-                        <span class="slider round"></span>
-                    </label>
-                </div>
-                <div>Aufputzmontage</div>
-            </p>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div>
-            <input id="searchInput" class="form-control" type="search" placeholder="Search" style="width: 80%; float: left; margin: 5px" onkeyup="search()"/>
-        </div>
-
-        <div style="width: 1000px">
-            <table id="TypeData"></table>
-        </div>
-    </div>
-    <div id="details" class="col-md-3" style="width: 300px">
-
-        @*<div id="tableDetails" style="margin-top: 45px; margin-left: 560px; margin-right: 10px; position: fixed; width: auto">
-            @*<div>
-                <div id="MyViewerDiv" style="height: 450px; width: 100%; background-image: url('images/loadingAnimation.gif'); background-repeat: no-repeat; background-size: contain; background-position: center; background-color: #ffffff; position: relative;"></div>
+    <div class="row">
+        <div class="col-md-2">
+            <button class="accordion" style="margin-top: 45px">Element</button>
+            <div class="panel">
+                <button class="btn btn-link" onclick="selectCategory(this.innerText)">Elektrische Ausstattung</button><br />
+                <button class="btn btn-link" onclick="selectCategory(this.innerText)">Elektroinstallationen</button><br />
+                <button class="btn btn-link" onclick="selectCategory(this.innerText)">Kommunikationsgeräte</button><br />
+                <button class="btn btn-link" onclick="selectCategory(this.innerText)">Datengeräte</button><br />
+                <button class="btn btn-link" onclick="selectCategory(this.innerText)">Brandmeldegeräte</button><br />
+                <button class="btn btn-link" onclick="selectCategory(this.innerText)">Lichtschalter</button><br />
+                <button class="btn btn-link" onclick="selectCategory(this.innerText)">Leuchten</button><br />
+                <button class="btn btn-link" onclick="selectCategory(this.innerText)">Notrufgeräte</button><br />
+                <button class="btn btn-link" onclick="selectCategory(this.innerText)">Sicherheitsgeräte</button><br />
+                <button class="btn btn-link" onclick="selectCategory(this.innerText)">Telefongeräte</button><br />
+                <button class="btn btn-link" onclick="selectCategory(this.innerText)">Allgemeines Modell</button><br />
             </div>
-            <table id="TypeDetails">
-                <tr>
-                    <td>
-                        <div id="ForgeDiv"></div></td></tr>
-            </table>
-        </div>*@
 
+            <button class="accordion">Installationsmedium</button>
+            <div id="installMediumCategories" class="panel">
+                <p>Nach Kategorie...</p>
+            </div>
+
+            <button class="accordion">Installationsort</button>
+            <div class="panel">
+                <p>
+                    <div style="float: left; width: 40px">
+                        <label class="switch">
+                            <input id="placementCeiling" type="checkbox" onclick="sortData()">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div>Decke</div>
+                </p>
+
+                <p>
+                    <div style="float: left; width: 40px">
+                        <label class="switch">
+                            <input id="placementWall" type="checkbox" onclick="sortData()">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div>Wand</div>
+                </p>
+                <p>
+                    <div style="float: left; width: 40px">
+                        <label class="switch">
+                            <input id="placementFloor" type="checkbox" onclick="sortData()">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div>Boden</div>
+                </p>
+            </div>
+
+            <button class="accordion">Installationsart</button>
+            <div class="panel">
+                <p>
+                    <div style="float: left; width: 40px">
+                        <label class="switch">
+                            <input id="internalMount" type="checkbox" onclick="sortData()">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div>Unterputzmontage</div>
+                </p>
+                <p>
+                    <div style="float: left; width: 40px">
+                        <label class="switch">
+                            <input id="externalMount" type="checkbox" onclick="sortData()">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div>Aufputzmontage</div>
+                </p>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div>
+                <input id="searchInput" class="form-control" type="search" placeholder="Search" style="width: 100%; float: left; margin: 5px" onkeyup="search()" />
+            </div>
+            <div>
+                <table id="TypeData"></table>
+            </div>
+        </div>
     </div>
-</div>
+
 </body>
 
 <style>
@@ -142,14 +101,14 @@
         background-image: url("images/loadingAnimation.gif")
     }
 
-     #testDiv {
-         width: 600px;
-         position: absolute;
-         z-index: 9;
-         background-color: #f1f1f1;
-         border: 1px solid #d3d3d3;
-         text-align: center
-     }
+    #testDiv {
+        width: 600px;
+        position: absolute;
+        z-index: 9;
+        background-color: #f1f1f1;
+        border: 1px solid #d3d3d3;
+        text-align: center
+    }
 
     #testDivheader {
         padding: 10px;
@@ -166,28 +125,28 @@
         border-collapse: collapse;
     }
 
-     #TypeData tr:nth-child(even), #TypeDetails tr:nth-child(even) {
-         background-color: #f2f2f2
-     }
+        #TypeData tr:nth-child(even), #TypeDetails tr:nth-child(even) {
+            background-color: #f2f2f2
+        }
 
-    #TypeData tr:hover, #TypeDetails tr:hover {
-        background-color: #ddd
-    }
+        #TypeData tr:hover, #TypeDetails tr:hover {
+            background-color: #ddd
+        }
 
-    #TypeData th, #TypeDetails th {
-        padding-top: 12px;
-        padding-bottom: 12px;
-        text-align: left;
-        background-color: #4CAF50;
-        color: white;
-        text-align: center
-    }
+        #TypeData th, #TypeDetails th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center
+        }
 
-    #TypeData td, #TypeData th, #TypeDetails td, #TypeDetails th {
-        border: 1px solid #ddd;
-        padding: 8px;
-        word-wrap: break-word
-    }
+        #TypeData td, #TypeData th, #TypeDetails td, #TypeDetails th {
+            border: 1px solid #ddd;
+            padding: 8px;
+            word-wrap: break-word
+        }
 
     .accordion {
         background-color: #4CAF50;
@@ -201,9 +160,9 @@
         transition: 0.4s;
     }
 
-    .active, .accordion:hover {
-        background-color: #4CAF50;
-    }
+        .active, .accordion:hover {
+            background-color: #4CAF50;
+        }
 
     /* Style the accordion panel. Note: hidden by default */
     .panel {
@@ -220,10 +179,10 @@
         height: 20px
     }
 
-    /* Hide default HTML checkbox */
-    .switch input {
-        display: none;
-    }
+        /* Hide default HTML checkbox */
+        .switch input {
+            display: none;
+        }
 
     /* The slider */
     .slider {
@@ -238,17 +197,17 @@
         transition: .4s
     }
 
-    .slider:before {
-        position: absolute;
-        content: "";
-        height: 14px;
-        width: 14px;
-        left: 4px;
-        bottom: 3px;
-        background-color: white;
-        -webkit-transition: .4s;
-        transition: .4s;
-    }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 14px;
+            width: 14px;
+            left: 4px;
+            bottom: 3px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
 
     input:checked + .slider {
         background-color: #4CAF50
@@ -269,9 +228,9 @@
         border-radius: 16px;
     }
 
-    .slider.round:before {
-        border-radius: 50%;
-    }
+        .slider.round:before {
+            border-radius: 50%;
+        }
 </style>
 
 <script>
@@ -301,6 +260,7 @@
     var sortedList = new Array();
     var typesList = new Array();
     var instalMedium = new Array();
+    var selectedItem;
     // console.log(xmlhttp.responseXML);
 
     var ceiling = document.getElementById("placementCeiling");
@@ -384,7 +344,7 @@
         }
 
         $.each(instalMediumAll,
-            function(i, el) {
+            function (i, el) {
                 if ($.inArray(el, instalMedium) === -1) instalMedium.push(el);
             });
 
@@ -418,30 +378,30 @@
     function updateTable(typesList) {
         var tableUpdated =
             "<colgroup><col style=\"width: 6%\">" +
-                "<col style=\"width: 20%\">" +
-                "<col style=\"width: 50%\">" +
-                "<col style=\"width: 8%\">" +
-                "<col style=\"width: 8%\">" +
-                "<col style=\"width: 12%\">" +
-                "</colgroup>" +
-                "<tr>" +
-                "<th>Bild</th>" +
-                //"<th>Category</th>" +
-                "<th>Beschreibung</th>" +
-                "<th>Type Name</th>" +
-                "<th ></th>" +
-                "<th ></th>" +
-                "<th >Installation Medium</th>" +
-                "</tr>";
+            "<col style=\"width: 20%\">" +
+            "<col style=\"width: 50%\">" +
+            "<col style=\"width: 8%\">" +
+            "<col style=\"width: 8%\">" +
+            "<col style=\"width: 12%\">" +
+            "</colgroup>" +
+            "<tr>" +
+            "<th>Bild</th>" +
+            //"<th>Category</th>" +
+            "<th>Beschreibung</th>" +
+            "<th>Type Name</th>" +
+            "<th ></th>" +
+            "<th ></th>" +
+            "<th >Installation Medium</th>" +
+            "</tr>";
         for (var i = 0; i < typesList.length; i++) {
             tableUpdated += "<tr>" +
                 "<td style=\"text- align: center;\"><img src= \"typeImages/" + typesList[i].typeName + ".PNG\" style=\"width:32px; height:32px\"/>" +
                 "<td>" + typesList[i].typeDescription.replace(/(\r\n\t|\n|\r\t)/gm, "") + "</td>" +
-                "<td><a class=\"btn btn-link\" onclick=\"showDetails(this.innerText)\" style=\"white-space: normal; word-wrap: break-word\" target=\"_blanc\">" + typesList[i].typeName.replace(/(\r\n\t|\n|\r\t)/gm, "") +"</a></td>" +
-               
-                "<td>" +typesList[i].typeMount +"</td>" +
-                "<td>" +typesList[i].typePlacement +"</td>" +
-                "<td>" +typesList[i].typeInstalMedium +"</td>" +
+                "<td><a class=\"btn btn-link\" onclick=\"showDetails(this.innerText)\" style=\"white-space: normal; word-wrap: break-word\" target=\"_blanc\">" + typesList[i].typeName.replace(/(\r\n\t|\n|\r\t)/gm, "") + "</a></td>" +
+
+                "<td>" + typesList[i].typeMount + "</td>" +
+                "<td>" + typesList[i].typePlacement + "</td>" +
+                "<td>" + typesList[i].typeInstalMedium + "</td>" +
                 "</tr>";
         }
         document.getElementById("TypeData").innerHTML = tableUpdated;
@@ -594,74 +554,46 @@
     }
 
     function showDetails(value) {
-        var selectedItem;
-       
+       // var selectedItem;
+
         for (var i = 0; i < typesList.length; i++) {
             if (typesList[i].typeName.replace(/\s+/g, "").includes(value.replace(/\s+/g, ""))) {
                 selectedItem = typesList[i];
             }
         }
-        var uploadField = document.getElementById("typeFileName");
-        uploadField.value = selectedItem.typeName;
-        var submitButton = document.getElementById("typeNameSubmit");
-        submitButton.click();
-
-        var tableDetails = " <colgroup><col style=\"width: 50%\">" +
-            "<col style=\"width: 50%\">" +
-            "</colgroup>" +
-            "<tr><th>Element</th><th>Parameter</th></tr>" +
-            "<tr><td>Bild:</td><td><img src = \"/typeImages/" + selectedItem.typeName + ".PNG\" style=\"width:64px; height:64px\"</td></tr>" +
-            "<tr><td>FamilienTyp:</td><td>" + selectedItem.typeName + "</td></tr>" +
-            "<tr><td>Bauteilbezeichnung:</td><td>" + selectedItem.typeDescription + "</td></tr>" +
-            "<tr><td>Installationsart:</td><td>" + selectedItem.typePlacement + "</td></tr>" +
-            "<tr><td>Installationsort:</td><td>" + selectedItem.typeMount + "</td></tr>" +
-            "<tr><td>Installations-Medium:</td><td>" + selectedItem.typeInstalMedium + "</td></tr>" +
-            "<tr><th>Grösse:</th><td>" +
-            "<tr><td>Durchmesser:</td><td>" +
-            "[E_Durchmesser]" +
-            "</td></tr>" +
-            "<tr><td>Breite:</td><td>" +
-            "[E_Breite]" +
-            "</td></tr>" +
-            "<tr><td>Hohe:</td><td>" +
-            "[E_Hohe]" +
-            "</td></tr>" +
-            "<tr><td>Tiefe:</td><td>" +
-            "[E_Tiefe]" +
-            "</td></tr>" +
-            "<tr><th>Elektro</th><td>" +
-            "<tr><td>eBKP-H:</td><td>" +
-            "[eBKP-H]" +
-            "</td></tr>" +
-            "<tr><td>BKP:</td><td>" +
-            "[BKP]" +
-            "</td></tr>" +
-            "<tr><th>Produkt</th><td>" +
-            "<tr><td>Fabricat</td><td>" +
-            "*" +
-            "</td></tr>" +
-            "<tr><td>Produkt</td><td>" +
-            "*" +
-            "</td></tr>" +
-            "<tr><td>Produkte-Nr.</td><td>" +
-            "*" +
-            "</td></tr>" +
-            "<tr><td>E-Nummer</td><td>" +
-            "*" +
-            "</td></tr>" +
-            "<tr><th>Technische Eigenschaften</th><td>" +
-            "<tr><td>RevitKategorie:</td><td>" +
-            "[Kategorie]" +
-            "</td></tr>" +
-            "<tr><td>OmniClass-Nummer</td><td>" +
-            "[OmniClass-Nummer]" +
-            "</td></tr>";
-       // document.getElementById("TypeDetails").innerHTML = tableDetails;
 
         var newWindow = window.open('Home/Details', 'Details');
         newWindow.onload = function () {
-            newWindow.document.getElementById("TypeDetails").innerHTML = tableDetails;
-            console.log();
+            localStorage.clear();
+            localStorage.setItem("typeName", selectedItem.typeName);
+            localStorage.setItem("typeDescription", selectedItem.typeDescription);
+            localStorage.setItem("typePlacement", selectedItem.typePlacement);
+            localStorage.setItem("typeMount", selectedItem.typeMoun);
+            localStorage.setItem("typeInstalMedium", selectedItem.typeInstalMedium);
+
+            var pictureStorage = "<img src= \"/typeImages/" +
+                selectedItem.typeName +
+                ".PNG\" style=\"width:240px; height:240px; display: block; margin: auto\">";
+            localStorage.setItem("picture", pictureStorage);
+          
+            var typeName = newWindow.document.getElementById("typeName");
+            typeName.innerHTML = selectedItem.typeName;
+            var typeDescription = newWindow.document.getElementById("typeDescription");
+            typeDescription.innerHTML = selectedItem.typeDescription;
+            var typePlacement = newWindow.document.getElementById("typePlacement");
+            typePlacement.innerHTML = selectedItem.typePlacement;
+            var typeMount = newWindow.document.getElementById("typeMount");
+            typeMount.innerHTML = selectedItem.typeMount;
+            var typeInstalMedium = newWindow.document.getElementById("typeInstalMedium");
+            typeInstalMedium.innerHTML = selectedItem.typeInstalMedium;
+
+            var picture = newWindow.document.getElementById("Picture");
+            picture.innerHTML = "<img src= \"/typeImages/" + selectedItem.typeName + ".PNG\" style=\"width:240px; height:240px; display: block; margin: auto\">";
+
+            var uploadField = newWindow.document.getElementById("typeFileName");
+            uploadField.value = selectedItem.typeName;
+            var submitButton = newWindow.document.getElementById("typeNameSubmit");
+            submitButton.click();
         }
     }
 </script>

@@ -34,8 +34,8 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><div style="margin-top: 7px; margin-left: 50px">@Html.Partial("Upload")</div></li>
+                    @*<li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>*@
+                    @*<li><div style="margin-top: 7px; margin-left: 50px">@Html.Partial("Upload")</div></li>*@
                     @*<li><div>
                         <input id="searchInput" class="form-control" type="search" placeholder="Search" style="width: 80%; float: left; margin: 5px" onkeyup="search()"/>
                         @*<button class="btn btn-success" style="margin: 5px" onclick="search()">Search</button>
@@ -47,7 +47,7 @@
             </div>
         </div>
     </nav>
-    <div class="container body-content" style="width: 100%">
+    <div class="container body-content" style="width: 1600px">
         @RenderBody()
         <hr />
         <footer>
@@ -58,7 +58,6 @@
     <environment names="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
     </environment>
     <environment names="Staging,Production">
         <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
@@ -73,7 +72,6 @@
                 crossorigin="anonymous"
                 integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
         </script>
-        <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>
 
     @RenderSection("Scripts", required: false)
