@@ -9,20 +9,14 @@
     <script src="~/js/forge.js"></script>
 </head>
 
-<style>
-    #Forge {
-        height: 400px;
-        width: auto;
-        margin: 15px;
-        /*border: 1px solid #ddd;*/
-    }
+<body>
 
-    #Picture {
-        height: 400px;
-        width: auto;
-        margin: 15px;
-        /*border: 1px solid #ddd;*/
-    }
+<div class="row">
+    <div class="col-md-3">
+        <div id="ForgeDiv"></div>
+    </div>
+    <div class="col-md-3">
+        <div id="details" class="col-md-3">
 
     #Element {
         height: 250px;
@@ -83,81 +77,5 @@
         }
 </style>
 
-<body>
-    <div hidden>
-        <form method="post" asp-controller="Home" asp-action="IndexName">
-            <input id="typeFileName" type="text" placeholder="Selected Type Name" name="DATA">
-            <input id="typeNameSubmit" type="submit" value="Submit" />
-        </form>
-    </div>
 
-    <div class="row">
-        <div class="col-md-4">
-            <div id="Forge">
-                <div id="ForgeDiv" style="height: 400px; width: 100%; background-image: url('/images/loadingAnimation.gif'); background-repeat: no-repeat; background-size: contain; background-position: center; background-color: #ffffff; position: relative; "></div>
-            </div>
-            <div id="Picture" > </div>
-        </div>
-        <div class="col-md-8">
-            <div id="Element">
-                <table class="TypeDetails">
-                    <tr><th>E L E M E N T</th><th>P A R A M E T E R</th></tr>
-                    <tr><td>Familien Typ:</td><td id="typeName"></td></tr>
-                    <tr><td>Bauteilbezeichnung:</td><td id="typeDescription"></td></tr>
-                    <tr><td>Installationsart:</td><td id="typePlacement"></td></tr>
-                    <tr><td>Installationsort:</td><td id="typeMount"></td></tr>
-                    <tr><td>Installations-Medium:</td><td id="typeInstalMedium"></td></tr>
-                </table>
-            </div>
-            <div class="col-md-6">
-                <div id="Product">
-                    <table class="TypeDetails">
-                        <tr><th>P R O D U C T</th><th>P A R A M E T E R</th></tr>
-                        <tr><td>Fabricat:</td><td>*</td></tr>
-                        <tr><td>Produkt:</td><td>*</td></tr>
-                        <tr><td>Produkte-Nr.:</td><td>*</td></tr>
-                        <tr><td>E-Nummer:</td><td>*</td></tr>
-                    </table>
-                </div>
-                <div id="TechnicInfo">
-                    <table class="TypeDetails">
-                        <tr><th>TECHNISCHE EIGENSCHAFTEN</th><th>P A R A M E T E R</th></tr>
-                        <tr><td>Revit Kategorie:</td><td>[Kategorie]</td></tr>
-                        <tr><td>OmniClass-Nummer:</td><td>[OmniClass-Nummer]</td></tr>
-                    </table>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div id="Size">
-                    <table class="TypeDetails">
-                        <tr><th>Grösse</th><th>P A R A M E T E R</th></tr>
-                        <tr><td>Durchmesser:</td><td>*</td></tr>
-                        <tr><td>Breite:</td><td>*</td></tr>
-                        <tr><td>Hohe:</td><td>*</td></tr>
-                        <tr><td>Tiefe:</td><td>*</td></tr>
-                    </table>
-                </div>
-                <div id="Electro">
-                    <table class="TypeDetails">
-                        <tr><th>Elektro</th><th>P A R A M E T E R</th></tr>
-                        <tr><td>eBKP-H:</td><td>[eBKP-H]</td></tr>
-                        <tr><td>BKP:</td><td>[BKP]</td></tr>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
-
-<script type="text/javascript">
-    var urn = "@Model";
-    showModel(urn);
-   
-    document.getElementById("typeName").innerHTML = localStorage.getItem("typeName");
-    document.getElementById("typeDescription").innerHTML = localStorage.getItem("typeDescription");
-    document.getElementById("typePlacement").innerHTML = localStorage.getItem("typePlacement");
-    document.getElementById("typeMount").innerHTML = localStorage.getItem("typeMount");
-    document.getElementById("typeInstalMedium").innerHTML = localStorage.getItem("typeInstalMedium");
-    document.getElementById("Picture").innerHTML = localStorage.getItem("picture");
-</script>
 
