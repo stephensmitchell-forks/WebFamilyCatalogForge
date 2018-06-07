@@ -2,123 +2,98 @@
 @{
     ViewData["Title"] = "Home Page";
 }
-<script src="~/js/dataSave.js"></script>
 
 <body>
-    <div class="row">
-        <div class="col-md-2">
-            <button class="accordion" style="margin-top: 45px">Element</button>
-            <div class="panel">
-                <button class="btn btn-link" onclick="selectCategory(this.innerText)">Elektrische Ausstattung</button><br />
-                <button class="btn btn-link" onclick="selectCategory(this.innerText)">Elektroinstallationen</button><br />
-                <button class="btn btn-link" onclick="selectCategory(this.innerText)">Kommunikationsgeräte</button><br />
-                <button class="btn btn-link" onclick="selectCategory(this.innerText)">Datengeräte</button><br />
-                <button class="btn btn-link" onclick="selectCategory(this.innerText)">Brandmeldegeräte</button><br />
-                <button class="btn btn-link" onclick="selectCategory(this.innerText)">Lichtschalter</button><br />
-                <button class="btn btn-link" onclick="selectCategory(this.innerText)">Leuchten</button><br />
-                <button class="btn btn-link" onclick="selectCategory(this.innerText)">Notrufgeräte</button><br />
-                <button class="btn btn-link" onclick="selectCategory(this.innerText)">Sicherheitsgeräte</button><br />
-                <button class="btn btn-link" onclick="selectCategory(this.innerText)">Telefongeräte</button><br />
-                <button class="btn btn-link" onclick="selectCategory(this.innerText)">Allgemeines Modell</button><br />
-            </div>
-
-            <button class="accordion">Installationsmedium</button>
-            <div id="installMediumCategories" class="panel">
-                <p>Nach Kategorie...</p>
-            </div>
-
-            <button class="accordion">Installationsort</button>
-            <div class="panel">
-                <p>
-                    <div style="float: left; width: 40px">
-                        <label class="switch">
-                            <input id="placementCeiling" type="checkbox" onclick="sortData()">
-                            <span class="slider round"></span>
-                        </label>
-                    </div>
-                    <div>Decke</div>
-                </p>
-
-                <p>
-                    <div style="float: left; width: 40px">
-                        <label class="switch">
-                            <input id="placementWall" type="checkbox" onclick="sortData()">
-                            <span class="slider round"></span>
-                        </label>
-                    </div>
-                    <div>Wand</div>
-                </p>
-                <p>
-                    <div style="float: left; width: 40px">
-                        <label class="switch">
-                            <input id="placementFloor" type="checkbox" onclick="sortData()">
-                            <span class="slider round"></span>
-                        </label>
-                    </div>
-                    <div>Boden</div>
-                </p>
-            </div>
-
-            <button class="accordion">Installationsart</button>
-            <div class="panel">
-                <p>
-                    <div style="float: left; width: 40px">
-                        <label class="switch">
-                            <input id="internalMount" type="checkbox" onclick="sortData()">
-                            <span class="slider round"></span>
-                        </label>
-                    </div>
-                    <div>Unterputzmontage</div>
-                </p>
-                <p>
-                    <div style="float: left; width: 40px">
-                        <label class="switch">
-                            <input id="externalMount" type="checkbox" onclick="sortData()">
-                            <span class="slider round"></span>
-                        </label>
-                    </div>
-                    <div>Aufputzmontage</div>
-                </p>
-            </div>
+<div class="row">
+    <div class="col-md-2">
+        <button class="accordion" style="margin-top: 45px">Element</button>
+        <div class="panel">
+            <button class="btn btn-link" onclick="selectCategory(this.innerText)">Elektrische Ausstattung</button><br/>
+            <button class="btn btn-link" onclick="selectCategory(this.innerText)">Elektroinstallationen</button><br/>
+            <button class="btn btn-link" onclick="selectCategory(this.innerText)">Kommunikationsgeräte</button><br/>
+            <button class="btn btn-link" onclick="selectCategory(this.innerText)">Datengeräte</button><br/>
+            <button class="btn btn-link" onclick="selectCategory(this.innerText)">Brandmeldegeräte</button><br/>
+            <button class="btn btn-link" onclick="selectCategory(this.innerText)">Lichtschalter</button><br/>
+            <button class="btn btn-link" onclick="selectCategory(this.innerText)">Leuchten</button><br/>
+            <button class="btn btn-link" onclick="selectCategory(this.innerText)">Notrufgeräte</button><br/>
+            <button class="btn btn-link" onclick="selectCategory(this.innerText)">Sicherheitsgeräte</button><br/>
+            <button class="btn btn-link" onclick="selectCategory(this.innerText)">Telefongeräte</button><br/>
+            <button class="btn btn-link" onclick="selectCategory(this.innerText)">Allgemeines Modell</button><br/>
         </div>
-        <div class="col-md-8">
-            <div>
-                <input id="searchInput" class="form-control" type="search" placeholder="Search" style="width: 100%; float: left; margin: 5px" onkeyup="search()" />
-            </div>
-            <div>
-                <table id="TypeData"></table>
-            </div>
+
+        <button class="accordion">Installationsmedium</button>
+        <div id="installMediumCategories" class="panel">
+            <p>Nach Kategorie...</p>
+        </div>
+
+        <button class="accordion">Installationsort</button>
+        <div class="panel">
+            <p>
+                <div style="float: left; width: 40px">
+                    <label class="switch">
+                        <input id="placementCeiling" type="checkbox" onclick="sortData()">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div>Decke</div>
+            </p>
+
+            <p>
+                <div style="float: left; width: 40px">
+                    <label class="switch">
+                        <input id="placementWall" type="checkbox" onclick="sortData()">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div>Wand</div>
+            </p>
+            <p>
+                <div style="float: left; width: 40px">
+                    <label class="switch">
+                        <input id="placementFloor" type="checkbox" onclick="sortData()">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div>Boden</div>
+            </p>
+        </div>
+
+        <button class="accordion">Installationsart</button>
+        <div class="panel">
+            <p>
+                <div style="float: left; width: 40px">
+                    <label class="switch">
+                        <input id="internalMount" type="checkbox" onclick="sortData()">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div>Unterputzmontage</div>
+            </p>
+            <p>
+                <div style="float: left; width: 40px">
+                    <label class="switch">
+                        <input id="externalMount" type="checkbox" onclick="sortData()">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div>Aufputzmontage</div>
+            </p>
         </div>
     </div>
+    <div class="col-md-8">
+
+        <div>
+            <table id="TypeData"></table>
+        </div>
+    </div>
+</div>
 
 </body>
 
 <style>
-    #ForgeDiv {
-        width: 400px;
-        height: 200px;
-        position: relative;
-        background-image: url("images/loadingAnimation.gif")
-    }
-
-    #testDiv {
-        width: 600px;
-        position: absolute;
-        z-index: 9;
-        background-color: #f1f1f1;
-        border: 1px solid #d3d3d3;
-        text-align: center
-    }
-
-    #testDivheader {
-        padding: 10px;
-        cursor: move;
-        z-index: 10;
-        background-color: #2196F3;
-        color: #fff;
-    }
 
     #TypeData, #TypeDetails {
+        margin-top: 45px;
         table-layout: fixed;
         width: 100%;
         border: 1px solid #ddd;
@@ -397,7 +372,7 @@
             tableUpdated += "<tr>" +
                 "<td style=\"text- align: center;\"><img src= \"typeImages/" + typesList[i].typeName + ".PNG\" style=\"width:32px; height:32px\"/>" +
                 "<td>" + typesList[i].typeDescription.replace(/(\r\n\t|\n|\r\t)/gm, "") + "</td>" +
-                "<td><a class=\"btn btn-link\" onclick=\"showDetails(this.innerText)\" style=\"white-space: normal; word-wrap: break-word\" target=\"_blanc\">" + typesList[i].typeName.replace(/(\r\n\t|\n|\r\t)/gm, "") + "</a></td>" +
+                "<td><a href=\"home/Details\"class=\"btn btn-link\" onclick=\"showDetails(this.innerText)\" style=\"white-space: normal; word-wrap: break-word\" target=\"_self\">" + typesList[i].typeName.replace(/(\r\n\t|\n|\r\t)/gm, "") + "</a></td>" +
 
                 "<td>" + typesList[i].typeMount + "</td>" +
                 "<td>" + typesList[i].typePlacement + "</td>" +
@@ -554,21 +529,22 @@
     }
 
     function showDetails(value) {
-       // var selectedItem;
 
         for (var i = 0; i < typesList.length; i++) {
             if (typesList[i].typeName.replace(/\s+/g, "").includes(value.replace(/\s+/g, ""))) {
                 selectedItem = typesList[i];
             }
         }
-
-        var newWindow = window.open('Home/Details', 'Details');
-        newWindow.onload = function () {
+       
+        var newWindow = window.self;
+       
+       // var newWindow = window.open('Home/Details', "_self");
+      //  newWindow.onload = function () {
             localStorage.clear();
             localStorage.setItem("typeName", selectedItem.typeName);
             localStorage.setItem("typeDescription", selectedItem.typeDescription);
             localStorage.setItem("typePlacement", selectedItem.typePlacement);
-            localStorage.setItem("typeMount", selectedItem.typeMoun);
+            localStorage.setItem("typeMount", selectedItem.typeMount);
             localStorage.setItem("typeInstalMedium", selectedItem.typeInstalMedium);
 
             var pictureStorage = "<img src= \"/typeImages/" +
@@ -590,10 +566,12 @@
             var picture = newWindow.document.getElementById("Picture");
             picture.innerHTML = "<img src= \"/typeImages/" + selectedItem.typeName + ".PNG\" style=\"width:240px; height:240px; display: block; margin: auto\">";
 
-            var uploadField = newWindow.document.getElementById("typeFileName");
-            uploadField.value = selectedItem.typeName;
-            var submitButton = newWindow.document.getElementById("typeNameSubmit");
-            submitButton.click();
-        }
+            //var uploadField = newWindow.document.getElementById("typeFileName");
+            //uploadField.value = selectedItem.typeName;
+            //var submitButton = newWindow.document.getElementById("typeNameSubmit");
+            //submitButton.click();
+
+          
+        //}
     }
 </script>

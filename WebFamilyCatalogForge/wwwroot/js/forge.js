@@ -9,7 +9,7 @@ function showModel(urn) {
         getAccessToken: getAccessToken,
         refreshToken: getAccessToken
     };
-
+    
     var documentId = 'urn:' + urn;
     console.log(documentId);
     if (window.Autodesk === undefined) {
