@@ -4,99 +4,101 @@
 }
 
 <body>
-<div class="row">
-    <div class="col-md-2">
-        <button class="accordion" style="margin-top: 45px">Element</button>
-        <div class="panel">
-            <button class="btn btn-link" onclick="selectCategory(this.innerText)">Elektrische Ausstattung</button><br/>
-            <button class="btn btn-link" onclick="selectCategory(this.innerText)">Elektroinstallationen</button><br/>
-            <button class="btn btn-link" onclick="selectCategory(this.innerText)">Kommunikationsgeräte</button><br/>
-            <button class="btn btn-link" onclick="selectCategory(this.innerText)">Datengeräte</button><br/>
-            <button class="btn btn-link" onclick="selectCategory(this.innerText)">Brandmeldegeräte</button><br/>
-            <button class="btn btn-link" onclick="selectCategory(this.innerText)">Lichtschalter</button><br/>
-            <button class="btn btn-link" onclick="selectCategory(this.innerText)">Leuchten</button><br/>
-            <button class="btn btn-link" onclick="selectCategory(this.innerText)">Notrufgeräte</button><br/>
-            <button class="btn btn-link" onclick="selectCategory(this.innerText)">Sicherheitsgeräte</button><br/>
-            <button class="btn btn-link" onclick="selectCategory(this.innerText)">Telefongeräte</button><br/>
-            <button class="btn btn-link" onclick="selectCategory(this.innerText)">Allgemeines Modell</button><br/>
+    <div class="row">
+        <div class="col-md-2">
+            <button class="accordion" style="margin-top: 45px">ELEMENT</button>
+            <div class="panel">
+                <button class="btn btn-link" onclick="selectCategory(this.innerText)">Elektrische Ausstattung</button><br />
+                <button class="btn btn-link" onclick="selectCategory(this.innerText)">Elektroinstallationen</button><br />
+                <button class="btn btn-link" onclick="selectCategory(this.innerText)">Kabeltrassen</button><br />
+                <button class="btn btn-link" onclick="selectCategory(this.innerText)">Kommunikationsgeräte</button><br />
+                <button class="btn btn-link" onclick="selectCategory(this.innerText)">Datengeräte</button><br />
+                <button class="btn btn-link" onclick="selectCategory(this.innerText)">Telefongeräte</button><br />
+                <button class="btn btn-link" onclick="selectCategory(this.innerText)">Brandmeldegeräte</button><br />
+                <button class="btn btn-link" onclick="selectCategory(this.innerText)">Lichtschalter</button><br />
+                <button class="btn btn-link" onclick="selectCategory(this.innerText)">Leuchten</button><br />
+                <button class="btn btn-link" onclick="selectCategory(this.innerText)">Notrufgeräte</button><br />
+                <button class="btn btn-link" onclick="selectCategory(this.innerText)">Sicherheitsgeräte</button><br />
+                <button class="btn btn-link" onclick="selectCategory(this.innerText)">Erdung</button><br />
+                <button class="btn btn-link" onclick="selectCategory(this.innerText)">Allgemeines Modell</button><br />
+                <button class="btn btn-link" onclick="selectCategory(this.innerText)">Legenden</button><br />
+            </div>
+
+            <button class="accordion">INSTALLATIONSMEDIUM</button>
+            <div id="installMediumCategories" class="panel">
+                <p>Nach Kategorie...</p>
+            </div>
+
+            <button class="accordion">INSTALLATIONSORT</button>
+            <div class="panel">
+                <p>
+                    <div style="float: left; width: 40px">
+                        <label class="switch">
+                            <input id="placementCeiling" type="checkbox" onclick="sortData()">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div>Decke</div>
+                </p>
+
+                <p>
+                    <div style="float: left; width: 40px">
+                        <label class="switch">
+                            <input id="placementWall" type="checkbox" onclick="sortData()">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div>Wand</div>
+                </p>
+                <p>
+                    <div style="float: left; width: 40px">
+                        <label class="switch">
+                            <input id="placementFloor" type="checkbox" onclick="sortData()">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div>Boden</div>
+                </p>
+            </div>
+
+            <button class="accordion">INSTALLATIONSART</button>
+            <div class="panel">
+                <p>
+                    <div style="float: left; width: 40px">
+                        <label class="switch">
+                            <input id="internalMount" type="checkbox" onclick="sortData()">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div>Unterputzmontage</div>
+                </p>
+                <p>
+                    <div style="float: left; width: 40px">
+                        <label class="switch">
+                            <input id="externalMount" type="checkbox" onclick="sortData()">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div>Aufputzmontage</div>
+                </p>
+            </div>
         </div>
+        <div class="col-md-8">
 
-        <button class="accordion">Installationsmedium</button>
-        <div id="installMediumCategories" class="panel">
-            <p>Nach Kategorie...</p>
-        </div>
-
-        <button class="accordion">Installationsort</button>
-        <div class="panel">
-            <p>
-                <div style="float: left; width: 40px">
-                    <label class="switch">
-                        <input id="placementCeiling" type="checkbox" onclick="sortData()">
-                        <span class="slider round"></span>
-                    </label>
-                </div>
-                <div>Decke</div>
-            </p>
-
-            <p>
-                <div style="float: left; width: 40px">
-                    <label class="switch">
-                        <input id="placementWall" type="checkbox" onclick="sortData()">
-                        <span class="slider round"></span>
-                    </label>
-                </div>
-                <div>Wand</div>
-            </p>
-            <p>
-                <div style="float: left; width: 40px">
-                    <label class="switch">
-                        <input id="placementFloor" type="checkbox" onclick="sortData()">
-                        <span class="slider round"></span>
-                    </label>
-                </div>
-                <div>Boden</div>
-            </p>
-        </div>
-
-        <button class="accordion">Installationsart</button>
-        <div class="panel">
-            <p>
-                <div style="float: left; width: 40px">
-                    <label class="switch">
-                        <input id="internalMount" type="checkbox" onclick="sortData()">
-                        <span class="slider round"></span>
-                    </label>
-                </div>
-                <div>Unterputzmontage</div>
-            </p>
-            <p>
-                <div style="float: left; width: 40px">
-                    <label class="switch">
-                        <input id="externalMount" type="checkbox" onclick="sortData()">
-                        <span class="slider round"></span>
-                    </label>
-                </div>
-                <div>Aufputzmontage</div>
-            </p>
+            <div>
+                <table id="TypeData"></table>
+            </div>
         </div>
     </div>
-    <div class="col-md-8">
-
-        <div>
-            <table id="TypeData"></table>
-        </div>
-    </div>
-</div>
 
 </body>
 
 <style>
-
     #TypeData, #TypeDetails {
         margin-top: 45px;
         table-layout: fixed;
         width: 100%;
-        border: 1px solid #ddd;
+        border: 0px solid red;
         border-collapse: collapse;
     }
 
@@ -112,8 +114,8 @@
             padding-top: 12px;
             padding-bottom: 12px;
             text-align: left;
-            background-color: #4CAF50;
-            color: white;
+            background-color: white;
+            color: black;
             text-align: center
         }
 
@@ -124,8 +126,8 @@
         }
 
     .accordion {
-        background-color: #4CAF50;
-        color: white;
+        background-color: white;
+        color: black;
         cursor: pointer;
         padding: 18px;
         width: 100%;
@@ -136,13 +138,15 @@
     }
 
         .active, .accordion:hover {
-            background-color: #4CAF50;
+            background-color: #e2001a;
+            color: white;
         }
 
     /* Style the accordion panel. Note: hidden by default */
     .panel {
         padding: 0 0px;
         background-color: white;
+        border-bottom: greenyellow;
         display: none;
         overflow: hidden
     }
@@ -185,11 +189,11 @@
         }
 
     input:checked + .slider {
-        background-color: #4CAF50
+        background-color: #e2001a
     }
 
     input:focus + .slider {
-        box-shadow: 0 0 1px #4CAF50;
+        box-shadow: 0 0 1px black;
     }
 
     input:checked + .slider:before {
@@ -206,6 +210,13 @@
         .slider.round:before {
             border-radius: 50%;
         }
+    .btn {
+        color: black;
+    }
+    .btn:hover {
+        color: #e2001a;
+    }
+   
 </style>
 
 <script>
@@ -246,13 +257,14 @@
     var internal = document.getElementById("internalMount");
 
     var family = xmlDoc.getElementsByTagName("FamilyData");
+
     for (var i = 0; i < family.length; i++) {
         var types = family[i].getElementsByTagName("FamilyTypeData");
         for (var j = 0; j < types.length; j++) {
             var category = family[i].getElementsByTagName("Category")[0].childNodes[0].nodeValue;
+
             var typeName = types[j].getElementsByTagName("Name")[0].childNodes[0].nodeValue;
             var typeDescription = " --- ";
-
             try {
                 typeDescription =
                     types[j].getElementsByTagName("Description")[0].childNodes[0].nodeValue.replace(
@@ -261,21 +273,56 @@
             } catch (error) {
                 console.error(error);
             }
+
             var typeCombinedDescription = types[j].getElementsByTagName("CombinedTypeData")[0].childNodes[0].nodeValue;
             var typeMount = types[j].getElementsByTagName("MountType")[0].childNodes[0].nodeValue;
             var typePlacement = types[j].getElementsByTagName("Placement")[0].childNodes[0].nodeValue;
             var typeInstalMedium = types[j].getElementsByTagName("InstallationMedium")[0].childNodes[0].nodeValue;
 
+            var familyName = family[i].getElementsByTagName("FamilyName")[0].childNodes[0].nodeValue;
+            //console.log(types[j].getElementsByTagName("Diameter")[0].childNodes[0]);
+
+            var typeDiameter = types[j].getElementsByTagName("Diameter")[0].childNodes[0].nodeValue;
+            var typeWidth = types[j].getElementsByTagName("Width")[0].childNodes[0].nodeValue;
+            var typeHight = types[j].getElementsByTagName("Hight")[0].childNodes[0].nodeValue;
+            var typeDepth = types[j].getElementsByTagName("Depth")[0].childNodes[0].nodeValue;
+
+            var type_eBKP_H = types[j].getElementsByTagName("eBKP_H")[0].childNodes[0].nodeValue;
+            var typeBKP = types[j].getElementsByTagName("BKP")[0].childNodes[0].nodeValue;
+
+            var typeManufacturer = types[j].getElementsByTagName("Manufacturer")[0].childNodes[0].nodeValue;
+            var typeProduct = types[j].getElementsByTagName("Product")[0].childNodes[0].nodeValue;
+            var typeProductNumber = types[j].getElementsByTagName("ProductNumber")[0].childNodes[0].nodeValue;
+            var typeE_Number = types[j].getElementsByTagName("E_Number")[0].childNodes[0].nodeValue;
+
+            var typeRevitCategory = types[j].getElementsByTagName("RevitCategory")[0].childNodes[0].nodeValue;
+            var typeOmniClass = types[j].getElementsByTagName("OmniClass")[0].childNodes[0].nodeValue;
+
             //--create object
-            var webType = {
-                category: category,
-                typeDescription: typeDescription,
-                typeName: typeName,
-                typeMount: typeMount,
-                typePlacement: typePlacement,
-                typeInstalMedium: typeInstalMedium
+            if (category !== "Beschriftungen") {
+                var webType = {
+                    category: category,
+                    typeDescription: typeDescription,
+                    typeName: typeName,
+                    typeMount: typeMount,
+                    typePlacement: typePlacement,
+                    typeInstalMedium: typeInstalMedium,
+                    typeFamily: familyName,
+                    typeManufacturer: typeManufacturer,
+                    typeProduct: typeProduct,
+                    typeProductNumber: typeProductNumber,
+                    typeE_Number: typeE_Number,
+                    typeRevitCategory: typeRevitCategory,
+                    typeOmniClass: typeOmniClass,
+                    typeDiameter: typeDiameter,
+                    typeWidth: typeWidth,
+                    typeHight: typeHight,
+                    typeDepth: typeDepth,
+                    type_eBKP_H: type_eBKP_H,
+                    typeBKP: typeBKP
+                }
+                typesList.push(webType);
             }
-            typesList.push(webType);
         }
     }
 
@@ -360,17 +407,17 @@
             "<col style=\"width: 12%\">" +
             "</colgroup>" +
             "<tr>" +
-            "<th>Bild</th>" +
+            "<th>BILD</th>" +
             //"<th>Category</th>" +
-            "<th>Beschreibung</th>" +
-            "<th>Type Name</th>" +
+            "<th>BESCHREIBUNG</th>" +
+            "<th>TYPE NAME</th>" +
             "<th ></th>" +
             "<th ></th>" +
-            "<th >Installation Medium</th>" +
+            "<th >INSTALLATION MEDIUM</th>" +
             "</tr>";
         for (var i = 0; i < typesList.length; i++) {
             tableUpdated += "<tr>" +
-                "<td style=\"text- align: center;\"><img src= \"typeImages/" + typesList[i].typeName + ".PNG\" style=\"width:32px; height:32px\"/>" +
+                "<td style=\"text- align: center;\"><img src= \"typeImages/" + typesList[i].typeFamily + " - " + typesList[i].typeName + ".PNG\" style=\"width:32px; height:32px\"/>" +
                 "<td>" + typesList[i].typeDescription.replace(/(\r\n\t|\n|\r\t)/gm, "") + "</td>" +
                 "<td><a href=\"home/Details\"class=\"btn btn-link\" onclick=\"showDetails(this.innerText)\" style=\"white-space: normal; word-wrap: break-word\" target=\"_self\">" + typesList[i].typeName.replace(/(\r\n\t|\n|\r\t)/gm, "") + "</a></td>" +
 
@@ -535,43 +582,65 @@
                 selectedItem = typesList[i];
             }
         }
-       
-        var newWindow = window.self;
-       
-       // var newWindow = window.open('Home/Details', "_self");
-      //  newWindow.onload = function () {
-            localStorage.clear();
-            localStorage.setItem("typeName", selectedItem.typeName);
-            localStorage.setItem("typeDescription", selectedItem.typeDescription);
-            localStorage.setItem("typePlacement", selectedItem.typePlacement);
-            localStorage.setItem("typeMount", selectedItem.typeMount);
-            localStorage.setItem("typeInstalMedium", selectedItem.typeInstalMedium);
 
-            var pictureStorage = "<img src= \"/typeImages/" +
-                selectedItem.typeName +
-                ".PNG\" style=\"width:240px; height:240px; display: block; margin: auto\">";
-            localStorage.setItem("picture", pictureStorage);
-          
-            var typeName = newWindow.document.getElementById("typeName");
-            typeName.innerHTML = selectedItem.typeName;
-            var typeDescription = newWindow.document.getElementById("typeDescription");
-            typeDescription.innerHTML = selectedItem.typeDescription;
-            var typePlacement = newWindow.document.getElementById("typePlacement");
-            typePlacement.innerHTML = selectedItem.typePlacement;
-            var typeMount = newWindow.document.getElementById("typeMount");
-            typeMount.innerHTML = selectedItem.typeMount;
-            var typeInstalMedium = newWindow.document.getElementById("typeInstalMedium");
-            typeInstalMedium.innerHTML = selectedItem.typeInstalMedium;
+        //var newWindow = window.self;
 
-            var picture = newWindow.document.getElementById("Picture");
-            picture.innerHTML = "<img src= \"/typeImages/" + selectedItem.typeName + ".PNG\" style=\"width:240px; height:240px; display: block; margin: auto\">";
+        // var newWindow = window.open('Home/Details', "_self");
+        //  newWindow.onload = function () {
+        localStorage.clear();
+        localStorage.setItem("typeName", selectedItem.typeName);
+        localStorage.setItem("typeDescription", selectedItem.typeDescription);
+        localStorage.setItem("typePlacement", selectedItem.typePlacement);
+        localStorage.setItem("typeMount", selectedItem.typeMount);
+        localStorage.setItem("typeInstalMedium", selectedItem.typeInstalMedium);
 
-            //var uploadField = newWindow.document.getElementById("typeFileName");
-            //uploadField.value = selectedItem.typeName;
-            //var submitButton = newWindow.document.getElementById("typeNameSubmit");
-            //submitButton.click();
+        localStorage.setItem("typeManufacturer", selectedItem.typeManufacturer);
+        localStorage.setItem("typeProduct", selectedItem.typeProduct);
+        localStorage.setItem("typeProductNumber", selectedItem.typeProductNumber);
+        localStorage.setItem("typeE_Number", selectedItem.typeE_Number);
 
-          
+        localStorage.setItem("typeRevitCategory", selectedItem.typeRevitCategory);
+        localStorage.setItem("typeOmniClass", selectedItem.typeOmniClass);
+
+        localStorage.setItem("typeDiameter", selectedItem.typeDiameter);
+        localStorage.setItem("typeWidth", selectedItem.typeWidth);
+        localStorage.setItem("typeHight", selectedItem.typeHight);
+        localStorage.setItem("typeDepth", selectedItem.typeDepth);
+
+        localStorage.setItem("type_eBKP_H", selectedItem.type_eBKP_H);
+        localStorage.setItem("typeBKP", selectedItem.typeBKP);
+
+
+        var pictureStorage = "<img src= \"/typeImages/" + selectedItem.typeFamily + " - " +
+            selectedItem.typeName +
+            ".PNG\" style=\"width:240px; height:240px; display: block; margin: auto\">";
+        localStorage.setItem("picture", pictureStorage);
+
+        //var typeName = newWindow.document.getElementById("typeName");
+        //typeName.innerHTML = selectedItem.typeName;
+        //var typeDescription = newWindow.document.getElementById("typeDescription");
+        //typeDescription.innerHTML = selectedItem.typeDescription;
+        //var typePlacement = newWindow.document.getElementById("typePlacement");
+        //typePlacement.innerHTML = selectedItem.typePlacement;
+        //var typeMount = newWindow.document.getElementById("typeMount");
+        //typeMount.innerHTML = selectedItem.typeMount;
+        //var typeInstalMedium = newWindow.document.getElementById("typeInstalMedium");
+        //typeInstalMedium.innerHTML = selectedItem.typeInstalMedium;
+
+        //var typeManufacturer = newWindow.document.getElementById("typeManufacturer");
+        //typeManufacturer.innerHTML = selectedItem.typeManufacturer;
+
+        //var typeProduct = newWindow.document.getElementById("typeProduct");
+        //typeProduct.innerText = "Test";
+
+        //var picture = newWindow.document.getElementById("Picture");
+        //picture.innerHTML = "<img src= \"/typeImages/" + selectedItem.typeFamily + " - " + selectedItem.typeName + ".PNG\" style=\"width:240px; height:240px; display: block; margin: auto\">";
+
+        //var uploadField = newWindow.document.getElementById("typeFileName");
+        //uploadField.value = selectedItem.typeName;
+        //var submitButton = newWindow.document.getElementById("typeNameSubmit");
+        //submitButton.click();
+
         //}
     }
 </script>

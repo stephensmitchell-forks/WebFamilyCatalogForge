@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="https://developer.api.autodesk.com/modelderivative/v2/viewers/style.min.css" type="text/css" />
     <script src="https://developer.api.autodesk.com/viewingservice/v1/viewers/three.min.js"></script>
     <script src="https://developer.api.autodesk.com/viewingservice/v1/viewers/viewer3D.min.js"></script>
-    <script src="~/js/forge.js"></script>
+    @*<script src="~/js/forge.js"></script>*@
 </head>
 
 <style>
@@ -70,8 +70,8 @@
         .TypeDetails th {
             height: 50px;
             text-align: left;
-            background-color: #4CAF50;
-            color: white;
+            background-color: white;
+            color: black;
             text-align: center
         }
 
@@ -80,6 +80,9 @@
             padding: 8px;
             word-wrap: break-word
         }
+    .TypeDetails tr:hover {
+        color: red;
+    }
 </style>
 
 <body>
@@ -112,17 +115,17 @@
                 <div id="Product">
                     <table class="TypeDetails">
                         <tr><th>P R O D U C T</th><th>P A R A M E T E R</th></tr>
-                        <tr><td>Fabricat:</td><td>*</td></tr>
-                        <tr><td>Produkt:</td><td>*</td></tr>
-                        <tr><td>Produkte-Nr.:</td><td>*</td></tr>
-                        <tr><td>E-Nummer:</td><td>*</td></tr>
+                        <tr><td>Fabricat:</td><td id="typeManufacturer"></td></tr>
+                        <tr><td>Produkt:</td><td id="typeProduct"></td></tr>
+                        <tr><td>Produkte-Nr.:</td><td id="typeProductNumber"></td></tr>
+                        <tr><td>E-Nummer:</td><td id="typeE_Number"></td></tr>
                     </table>
                 </div>
                 <div id="TechnicInfo">
                     <table class="TypeDetails">
                         <tr><th>TECHNISCHE EIGENSCHAFTEN</th><th>P A R A M E T E R</th></tr>
-                        <tr><td>Revit Kategorie:</td><td>[Kategorie]</td></tr>
-                        <tr><td>OmniClass-Nummer:</td><td>[OmniClass-Nummer]</td></tr>
+                        <tr><td>Revit Kategorie:</td><td id="typeRevitCategory"></td></tr>
+                        <tr><td>OmniClass-Nummer:</td><td id="typeOmniClass"></td></tr>
                     </table>
                 </div>
             </div>
@@ -130,17 +133,17 @@
                 <div id="Size">
                     <table class="TypeDetails">
                         <tr><th>Grösse</th><th>P A R A M E T E R</th></tr>
-                        <tr><td>Durchmesser:</td><td>*</td></tr>
-                        <tr><td>Breite:</td><td>*</td></tr>
-                        <tr><td>Hohe:</td><td>*</td></tr>
-                        <tr><td>Tiefe:</td><td>*</td></tr>
+                        <tr><td>Durchmesser:</td><td id="typeDiameter"></td></tr>
+                        <tr><td>Breite:</td><td id="typeWidth"></td></tr>
+                        <tr><td>Hohe:</td><td id="typeHight"></td></tr>
+                        <tr><td>Tiefe:</td><td id="typeDepth"></td></tr>
                     </table>
                 </div>
                 <div id="Electro">
                     <table class="TypeDetails">
                         <tr><th>Elektro</th><th>P A R A M E T E R</th></tr>
-                        <tr><td>eBKP-H:</td><td>[eBKP-H]</td></tr>
-                        <tr><td>BKP:</td><td>[BKP]</td></tr>
+                        <tr><td>eBKP-H:</td><td id="type_eBKP_H"></td></tr>
+                        <tr><td>BKP:</td><td id="typeBKP"></td></tr>
                     </table>
                 </div>
             </div>
@@ -150,15 +153,16 @@
 
 <script type="text/javascript">
     var urn = "@Model";
-    showModel(urn);
+    //showModel(urn);
     if (urn === "") {
        
         var uploadField = document.getElementById("typeFileName");
         uploadField.value = localStorage.getItem("typeName");
         var submitButton = document.getElementById("typeNameSubmit");
-        submitButton.click();
+        //submitButton.click();
 
     }
+
     document.getElementById("typeName").innerHTML = localStorage.getItem("typeName");
     document.getElementById("typeDescription").innerHTML = localStorage.getItem("typeDescription");
     document.getElementById("typePlacement").innerHTML = localStorage.getItem("typePlacement");
@@ -166,8 +170,22 @@
     document.getElementById("typeInstalMedium").innerHTML = localStorage.getItem("typeInstalMedium");
     document.getElementById("Picture").innerHTML = localStorage.getItem("picture");
 
-  
+    document.getElementById("typeManufacturer").innerHTML = localStorage.getItem("typeManufacturer");
+    document.getElementById("typeProduct").innerHTML = localStorage.getItem("typeProduct");
+    document.getElementById("typeProductNumber").innerHTML = localStorage.getItem("typeProductNumber");
+    document.getElementById("typeE_Number").innerHTML = localStorage.getItem("typeE_Number");
+
+    document.getElementById("typeRevitCategory").innerHTML = localStorage.getItem("typeRevitCategory");
+    document.getElementById("typeOmniClass").innerHTML = localStorage.getItem("typeOmniClass");
     
-  
+
+    document.getElementById("typeDiameter").innerHTML = localStorage.getItem("typeDiameter");
+    document.getElementById("typeWidth").innerHTML = localStorage.getItem("typeWidth");
+    document.getElementById("typeHight").innerHTML = localStorage.getItem("typeHight");
+    document.getElementById("typeDepth").innerHTML = localStorage.getItem("typeDepth");
+
+    document.getElementById("type_eBKP_H").innerHTML = localStorage.getItem("type_eBKP_H");
+    document.getElementById("typeBKP").innerHTML = localStorage.getItem("typeBKP");
+
 </script>
 
